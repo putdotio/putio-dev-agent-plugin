@@ -8,16 +8,15 @@ mise config or version files, so nothing here installs them.
 ## Tools
 
 ```bash
-mise use -g gh jq age sops actionlint github:putdotio/putio-cli
+mise use -g gh jq age sops github:putdotio/putio-cli
 ```
 
 - `gh`: signed in with the put.io GitHub account; PR media uploads use the
   same login
 - `age` and `sops`: decrypt the local secrets vault, see
-  [secrets](./delivery/secrets.md)
-- `actionlint`: workflow checks in the verify gates
+  [delivery](./delivery.md#secrets)
 - `putio`: the put.io CLI used by test harnesses, see
-  [CLI harness contract](./test-harness/cli.md)
+  [CLI harness](./cli-harness.md)
 - Apple targets need Xcode on macOS; Android targets need Android Studio
 
 ## Repositories
@@ -47,7 +46,7 @@ carries a mise config before running its commands.
 ```bash
 registry=<skill-dir>/repos.json
 mise doctor
-for tool in gh jq age sops actionlint putio; do command -v "$tool" >/dev/null || echo "missing: $tool"; done
+for tool in gh jq age sops putio; do command -v "$tool" >/dev/null || echo "missing: $tool"; done
 gh auth status
 jq -r '.[][] | .path' "$registry" \
   | while read -r checkout; do [ -d "${checkout/#\~/$HOME}/.git" ] || echo "missing checkout: $checkout"; done

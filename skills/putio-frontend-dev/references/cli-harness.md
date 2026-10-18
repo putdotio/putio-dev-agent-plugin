@@ -1,10 +1,10 @@
 # CLI-backed frontend harnesses
 
-A frontend harness may use the globally installed `putio` binary as an adapter
-for account-backed setup, observations, and reversible test state. Use the
-stable lookup published by the
-[putio CLI discovery reference](https://github.com/putdotio/putio-cli/blob/main/skills/putio-cli/references/discovery.md),
-then keep command selection capability-based.
+A harness may use the globally installed `putio` binary for account-backed
+setup, observations, and reversible test state. Select commands by the live
+contract the
+[putio CLI discovery reference](https://github.com/putdotio/putio-cli/blob/main/skills/putio-cli/references/discovery.md)
+describes.
 
 ## Discover
 
@@ -44,7 +44,7 @@ installed. It is not a harness prerequisite.
 - If the profile lacks a usable OAuth session, complete the discovered OAuth
   or device-link login with the shared test-account credentials from the
   authorized secret provider, under the
-  [credential boundary](./pattern.md#3-auth-and-session-setup).
+  [credential boundary](./test-harness.md#auth).
   The CLI persists only the returned token.
 - Keep the profile name neutral in public examples, such as `<test-profile>`.
 

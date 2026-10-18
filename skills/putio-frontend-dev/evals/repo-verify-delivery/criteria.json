@@ -19,7 +19,7 @@
     },
     {
       "name": "documents_distribution_contract",
-      "description": "Places release, publishing, or deployment contract details in `docs/DISTRIBUTION.md` with contributor docs linking to it when needed.",
+      "description": "Places release, publishing, or deployment contract details in `docs/distribution.md` with contributor docs linking to it when needed.",
       "max_score": 2
     },
     {
