@@ -1,9 +1,8 @@
 # Environment setup
 
-One machine layout for put.io frontend work on macOS or Linux. Runtimes come
-from [mise](https://mise.jdx.dev), installed and activated in the shell first.
-Repositories that need Node, pnpm, or platform toolchains pin them in their own
-mise config or version files, so nothing here installs them.
+One machine layout for put.io frontend work on macOS or Linux. Install and
+activate [mise](https://mise.jdx.dev) first. Repos pin Node, pnpm, and platform
+toolchains in their own mise config or version files.
 
 ## Tools
 
@@ -11,11 +10,10 @@ mise config or version files, so nothing here installs them.
 mise use -g gh jq age sops github:putdotio/putio-cli
 ```
 
-- `gh`: signed in with the put.io GitHub account; PR media uploads use the
-  same login
+- `gh`: signed in with the put.io GitHub account, which also uploads PR media
 - `age` and `sops`: decrypt the local secrets vault, see
   [delivery](./delivery.md#secrets)
-- `putio`: the put.io CLI used by test harnesses, see
+- `putio`: the put.io CLI test harnesses use, see
   [CLI harness](./cli-harness.md)
 - Apple targets need Xcode on macOS; Android targets need Android Studio
 
@@ -37,9 +35,9 @@ Private entries clone only for members of the GitHub organization.
 
 ## Clones and worktrees
 
-Agent worktrees live in the coding harness's own worktree folder, outside the
-canonical checkouts. Run `mise trust` inside every new clone or worktree that
-carries a mise config before running its commands.
+Agent worktrees live in the coding harness's worktree folder, outside the
+canonical checkouts. Run `mise trust` in every new clone or worktree that has a
+mise config before running its commands.
 
 ## Check
 
@@ -53,5 +51,5 @@ jq -r '.[][] | .path' "$registry" \
 ```
 
 The machine is ready when the check prints no `missing` lines and
-`gh auth status` shows the put.io account logged in. Secrets are verified
-separately in the vault repository.
+`gh auth status` shows the put.io account. The vault repository checks secrets
+separately.
