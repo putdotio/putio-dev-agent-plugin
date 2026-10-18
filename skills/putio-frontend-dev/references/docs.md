@@ -13,7 +13,7 @@ Templates and section order live in Notion:
 - Conventional root files (`README.md`, `CONTRIBUTING.md`, `LICENSE`,
   `SECURITY.md`, `AGENTS.md`, `CLAUDE.md`) and names a platform requires
   (`.github/pull_request_template.md`, `.github/ISSUE_TEMPLATE/`,
-  `CODEOWNERS`) keep their names; every other doc is kebab-case, such as
+  `CODEOWNERS`, `SKILL.md`) keep their names; every other doc is kebab-case, such as
   `docs/distribution.md`.
 - PR and issue templates hold the review checklist; `CONTRIBUTING.md` only
   summarizes. Templates name the media route: `gh pr create --attach` or
