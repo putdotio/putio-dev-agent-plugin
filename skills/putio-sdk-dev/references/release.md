@@ -35,8 +35,8 @@ Check live provider settings before claiming a security posture.
 - **Versions**: build versioned releases from the release tag, with manifest
   version, tag, package metadata, and public repo URL aligned.
 - **Handoff**: the registry package or GitHub Release asset is the durable
-  artifact, not an Actions artifact. Promote the published artifact without
-  rebuilding it, and record the commit SHA, tag, package version, artifact
+  artifact, not an Actions artifact. Verify the published artifact matches
+  what you inspected, then promote it without rebuilding, and record the commit SHA, tag, package version, artifact
   digest, workflow run, and published artifact identity.
 - **Docs**: release and publishing behavior lives in the repo's
   `docs/distribution.md`.

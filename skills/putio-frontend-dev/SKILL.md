@@ -1,6 +1,6 @@
 ---
 name: putio-frontend-dev
-description: "put.io end-user apps and shared frontend packages: build or review UI, state, tests, docs, test harnesses and their auth, delivery, and machine setup. Use in a put.io frontend repository or for put.io frontend conventions. SDK and API client work, putio CLI operations, browser-only put.io inspection, and non-put.io frontends belong elsewhere."
+description: "put.io end-user apps and shared frontend packages: build or review UI, state, tests, docs, test harnesses and their auth, delivery, and machine setup. Use in a put.io frontend repository or for put.io frontend conventions. SDK and API client work, putio CLI consumer operations (CLI use inside a test harness stays here), browser-only put.io inspection, and non-put.io frontends belong elsewhere."
 ---
 
 # put.io frontend development
@@ -87,6 +87,7 @@ Edit Frontend pages; edit another team's page only when the task names it.
   uncertain. Report package, consumer, browser, and device proof separately.
 - Exercise user-visible changes in the real browser, app, simulator, emulator,
   or device: first load, loading, error, empty, small screens, focus, and races.
+  Look at the rendered result yourself; a finished run is not proof it looks right.
 - Reuse passing proof while its source, inputs, and environment are unchanged.
 - Name each proof you could not run and what blocked it. Finding a command
   does not authorize live actions.
