@@ -2,8 +2,7 @@
 
 Use this reference when a put.io frontend-owned repo has local/dev secrets,
 live-test env files, SOPS ciphertext inputs, or secret-bearing build, signing,
-release, or deploy workflows. It defines the public repo-side mechanics; private
-operator docs are not required.
+release, or deploy workflows. It defines the public repo-side mechanics.
 
 **Out of scope**: repos with native non-task-runner build systems (e.g. Xcode +
 Fastlane), repos that _hold_ signing material consumed by tools like `match`,
@@ -208,16 +207,8 @@ action, then pass the resulting short-lived token to the narrow final write step
 When to keep `deployment: false` is in
 [release security](./release-security.md#release-identity).
 
-## Harness ergonomics
-
-- Render or inject only non-account test fixtures into the harness. Account
-  credentials stay in the authorized secret provider and may be entered only by
-  process-scoped browser automation on the official put.io login page.
-- Reuse the resulting named OAuth profile or ignored local session state for
-  the bounded test flow. The harness and CLI receive codes or tokens, never the
-  username, password, or TOTP seed.
-- Unattended runs use dedicated machine identities with only the fixture and
-  browser-login capabilities they need.
+Harness credentials follow the
+[credential boundary](../test-harness/pattern.md#3-auth-and-session-setup).
 
 ## Untrusted code
 

@@ -7,7 +7,6 @@ Use this when shaping top-level docs for a put.io frontend repo. Copy the struct
 - `README.md` is user-facing: what the project is, how to install it, how to use it.
 - `CONTRIBUTING.md` is developer-facing: environment setup, local run, checks.
 - `LICENSE` states the license; reference it from `README.md`.
-- Security reporting follows the [org-wide security policy](https://github.com/putdotio/.github/blob/main/SECURITY.md). Add a repo `SECURITY.md` only when its policy genuinely differs.
 
 ## README.md
 
@@ -27,7 +26,7 @@ Use this order unless the repo gives a strong reason not to:
 - For app repos, show the user-facing way to access or use the app; contributor setup belongs in `CONTRIBUTING.md`.
 - Use human-facing labels, not raw filenames or paths: `Contributing`, `Distribution`, `Architecture`, or `Agent guide` over `CONTRIBUTING.md` or `docs/DISTRIBUTION.md`.
 - Add short `Contributing` and `License` sections that point to `CONTRIBUTING.md` and `LICENSE`.
-- Add a short `Security` section that links the [org-wide security policy](https://github.com/putdotio/.github/blob/main/SECURITY.md), or the repo `SECURITY.md` when one exists.
+- Add a short `Security` section that links the org-wide security policy, or the repo `SECURITY.md` when one exists; [top-level docs](./style.md#workflow) owns when a repo needs its own.
 
 ## Hero and badges
 

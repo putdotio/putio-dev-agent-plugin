@@ -8,7 +8,7 @@ Policy and live posture live in the put.io Notion workspace under Frontend / Del
 - [Release security](https://app.notion.com/p/3ded546ba2f581a39ec9e28f38e6d3fc): repository rulesets, Environments, runners and CI cost, AWS deploy roles, dependency updates, the supply-chain incident runbook, and the live settings to check
 - [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228): where CI values live and how a new release Environment is created
 
-Public frontend repos use shared default-branch and release-tag rulesets with no required pull requests, reviews, or status checks. Verify live provider settings before any severity, remediation, or status claim; repo docs and workflow files describe intent.
+Verify live provider settings before any severity, remediation, or status claim; repo docs and workflow files describe intent.
 
 The rest of this file covers the workflow mechanics agents write.
 
@@ -37,15 +37,14 @@ The rest of this file covers the workflow mechanics agents write.
 - For semantic-release action workflows, keep CI/CD-only release plugins in `extra_plugins` rather than repo `devDependencies`, and pin every plugin entry to an exact version
 - Keep checkout credentials unpersisted through install, build, and pack steps when possible. If semantic-release must push a version bump, introduce the release-bot write credential only at the release boundary, after dependency lifecycle scripts have finished
 - Verify downloaded runtime or toolchain archives before extraction or embedding. For Node SEA or binary builds, download the official checksum file, match the exact platform archive name, hash the archive, and fail before extraction on mismatch
-- Keep security-sensitive build logic typed when the repo supports it without extra dependencies. In TypeScript repos, prefer `.ts` or `.mts` scripts over loosely typed `.mjs` for release-critical logic
+- Keep security-sensitive build logic typed when the repo supports it without extra dependencies. In TypeScript repos, prefer `.ts` or `.mts` scripts over loosely typed `.mjs` for release-critical logic when the repo's Node runtime can execute them without release-only dependencies
 - Shell installers for downloaded binaries normalize the final executable mode, for example `0755`, and reject group/world-writable install directories unless the repo exposes an explicit opt-in for shared installs
 
 ## Caches and generated trees
 
 - Verify jobs may use dependency caches; secret-bearing release, publish, signing, and deploy jobs install fresh. Include `${{ github.event_name }}` in cache keys so `pull_request` jobs cannot poison caches that privileged `push: main`, `workflow_dispatch`, or tag-driven jobs consume
-- Regenerate or verify generated dependency trees, such as full CocoaPods `Pods` trees, inside signed or release jobs. Cache download artifacts where possible, then regenerate and verify before signing or publishing
+- Regenerate or verify generated dependency trees inside signed or release jobs. Cache download artifacts where possible, then regenerate and verify before signing or publishing
 - If a generated-tree or tool cache is unavoidable in a privileged job, namespace it by workflow, event, trust level, platform, and lockfile. Privileged jobs consume only caches written by the same trusted event class, and still verify the restored tree against the lockfile before signing or publishing
-- `bootstrap-ci.sh`-style shortcuts that skip regeneration only from lockfile equality are acceptable for local speed, but risky when a generated tree came from a shared CI cache
 
 ## Handoffs and provenance
 

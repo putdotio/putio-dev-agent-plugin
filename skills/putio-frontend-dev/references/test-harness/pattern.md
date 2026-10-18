@@ -81,11 +81,15 @@ The credential boundary is strict:
 - Do not add account-credential exchange, TOTP generation, or reauthentication
   with account credentials to a client or harness. Standards-based OAuth token
   refresh remains supported.
+- Render or inject only non-account test fixtures into the harness. Reuse the
+  resulting named OAuth profile or ignored local session state for the bounded
+  test flow.
+- Unattended runs use dedicated machine identities with only the fixture and
+  browser-login capabilities they need.
 
 When a harness calls the globally installed `putio` binary, follow the
 [CLI harness contract](./cli.md). It owns runtime discovery,
-structured output, profile auth, paging, dry-runs, and write safety without
-requiring the separate consumer CLI skill.
+structured output, profile auth, paging, dry-runs, and write safety.
 
 Keep profile state global so it survives app reinstalls, simulator wipes, and
 sideload cycles. Use a repo-local config path only when a test needs isolated
@@ -161,7 +165,7 @@ Common artifacts:
 - compact verification summaries
 
 Use the repo's ignored working directory for generated artifacts, such as
-`.harness/`, `.taizn/`, `.roku-live/`, or `artifacts/live/`.
+`.harness/`, `.taizn/`, or `artifacts/live/`.
 
 Name artifacts by scenario, device, and timestamp only when that helps review.
 Keep paths deterministic when smoke checks compare or upload known filenames.
