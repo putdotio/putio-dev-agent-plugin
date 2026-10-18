@@ -31,7 +31,7 @@ rg --hidden -n "README|CONTRIBUTING|SECURITY|AGENTS|CLAUDE|docs/|pull_request_te
   --glob 'docs/**' \
   --glob '.github/**' || true
 test -e README.md && test -e CONTRIBUTING.md && test -e LICENSE
-test ! -e AGENTS.md || { test -L CLAUDE.md && test "$(readlink CLAUDE.md)" = "AGENTS.md"; }
+test ! -e AGENTS.md || { test -f CLAUDE.md && ! test -L CLAUDE.md && test "$(cat CLAUDE.md)" = "@AGENTS.md"; }
 ```
 
 ## Guardrails
