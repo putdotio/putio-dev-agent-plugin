@@ -36,6 +36,6 @@ for CI credentials. Verify live provider settings before a posture claim.
   Actions artifact. Do not rebuild a package merely to promote it; verify and
   promote the published artifact, recording the commit SHA, tag, package
   version, artifact digest, workflow run, and published artifact identity.
-- Keep release and publishing behavior in the target repository's distribution
-  or release documentation. Publishing and release creation remain explicit
+- Keep release and publishing behavior in the target repository's
+  `docs/distribution.md`. Publishing and release creation remain explicit
   external actions.

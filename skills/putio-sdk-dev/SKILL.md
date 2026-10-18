@@ -5,112 +5,65 @@ description: "Develop or review put.io SDK and API client packages in TypeScript
 
 # put.io SDK development
 
-Apply put.io SDK conventions after the target repository's own guidance.
-
-## Shared defaults
-
-- Treat each SDK as a public package, not an internal compatibility layer.
-- Treat TypeScript as the canonical full put.io API client, not just the richest reference.
-- Keep every public surface domain-first, strongly typed, and native to its host language.
-- Update request, response, and typed error contracts together.
-- Prove behavior with deterministic tests plus safe live tests when real API behavior matters.
-- Keep Swift and Kotlin scope narrower than TypeScript only when product usage justifies it.
-
-## Source order
-
-When sources disagree, prefer local backend behavior and tests, current
-first-party app usage, maintained SDKs, archived clients, then published API
-documentation.
-
-Start with sources present in the target repository. Add backend or first-party
-consumer evidence only when it is authorized and available.
-
-Widen SDK surfaces only when real app use and verified backend behavior justify it.
+Quick rules for put.io SDK work. The target repository's `AGENTS.md`, docs,
+verify command, and release policy win. Scope doctrine, language notes, and
+code patterns live in the put.io Notion
+[SDK engineering guide](https://app.notion.com/p/3fdd546ba2f5817a9a06fc5f5f99db7b);
+product direction under Frontend hub › Products.
 
 ## Start
 
-Read only what you need:
+1. Read the repo's `AGENTS.md` files and its documented verify and live-test
+   commands. Never infer a Vite+, Gradle, or Make entrypoint from this skill.
+2. Inspect the target namespace and the shared transport or client runtime.
+3. Releasing or publishing: read [release](./references/release.md).
 
-- nested guidance from `git ls-files '*AGENTS.md' '*SKILL.md'`
-- the canonical verify and live-test commands from `README.md`, `AGENTS.md`, or `docs/*`
-- [SDK vision](./references/sdk-vision.md) for scope rules, shared engineering principles, and the verification policy; product direction lives in the Frontend hub in the put.io Notion workspace (page: Products)
-- [patterns](./references/patterns.md) for typed boundaries, error mapping, pagination, and live-test layering
-- [language notes](./references/language-notes.md) for TypeScript, Swift, or Kotlin-specific guidance
-- [release security](./references/release-security.md) when publishing,
-  signing, releasing, or building distributable binaries
+## Rules
 
-Target-repo guidance, matching repo-local skills, the repo's canonical verify
-command, and its delivery or supply-chain policy override this shared skill.
-
-## Workflow
-
-1. Inspect the target namespace and the shared transport or client runtime.
-2. Check backend behavior, backend tests, and current app usage before widening or changing a contract.
-3. Update typed request input, response parsing, and operation-specific error mapping together.
-4. Add or update deterministic coverage for request shaping, parsing, errors, and public client contracts.
-5. Add or refresh safe live verification when production behavior matters and the surface is reversible.
-6. Keep multiple public clients aligned when the repo exposes more than one interface style.
-7. Run the owner's documented checks for the affected contracts and their
-   dependents, including installed-package and downstream-consumer proof when
-   relevant. Run the full canonical gate when mandated, shared inputs changed,
-   or focused coverage is uncertain.
-8. Update package-facing docs and release notes when the public surface changes.
+- Each SDK is a public package: domain-first, strongly typed, native to its
+  language (Effect-first TypeScript, `async throws` Swift, coroutine-first
+  Kotlin).
+- TypeScript is the canonical full API client. Swift and Kotlin stay narrower,
+  widened only when backend behavior is verified and first-party apps use it,
+  at the same quality bar.
+- Parse at the boundary; no raw JSON results, casts, or stringly typed errors
+  on the public surface. Typed errors are public API.
+- When sources disagree, trust backend behavior and tests, then current
+  first-party app usage, maintained SDKs, archived clients, and published docs.
+  Use backend or consumer checkouts only when available and authorized.
+- Preserve naming, parity, and type safety unless a documented reason
+  justifies a change. Keep repo-specific guidance in that repo's `AGENTS.md`.
 
 ## Endpoint changes
 
-For a new or changed endpoint, discover the tracked source, test, fixture, and
-consumer paths first. Search only paths that exist:
-
-```bash
-git ls-files -z -- \
-  ':(glob)**/src/**' \
-  ':(glob)**/test/**' \
-  ':(glob)**/tests/**' \
-  ':(glob)**/Tests/**' \
-  ':(glob)**/Sources/**' \
-  ':(glob)**/docs/**' \
-  ':(glob)**/fixtures/**' \
-  ':(glob)**/Package.swift' \
-  ':(glob)**/build.gradle' \
-  ':(glob)**/package.json' |
-  xargs -0 rg -n "route_name|endpoint_path|field_name" -- || true
-```
-
-Repeat this search from a backend, fixture, or first-party consumer checkout
-only when that source is available and authorized.
-
-Then update the SDK in this order:
-
-1. request input type or query model
-2. response parser or native decode model
-3. operation-specific error mapping
-4. public client method or namespace export
-5. unit tests for request, response, and error behavior
-6. safe live test when the endpoint behavior cannot be proven locally
-7. README, API docs, or release notes when the public surface changed
+1. Check backend behavior, its tests, and current app usage before widening or
+   changing a contract. Find the tracked source, test, fixture, and consumer
+   paths with `git ls-files | xargs rg -n "<route|field>"`.
+2. Update together: request input or query model, response parser or decode
+   model, operation-specific error mapping, and the public method or export.
+3. Add deterministic tests for request shaping, parsing, errors, and the
+   public contract.
+4. Add a safe live test when behavior cannot be proven locally.
+5. Keep multiple public clients aligned (Promise and Effect, for example).
+6. Update README, API docs, or release notes when the public surface changes.
 
 ## Verification
 
-Use the owning repository's documented commands. Do not infer a Vite+, Gradle,
-or Make entrypoint from this shared skill.
-
-An SDK repo should expose both:
-
-- a default deterministic unit-test path that is safe for CI and local iteration
-- a separate documented live-test path for real API verification
-
-If one of those layers is missing, treat it as a repo gap to document or fix rather than silently accepting a weaker verification story.
-
-For runtime verification, prefer the repo's documented live-test entrypoints and follow the shared-account safety rules in that repo's testing docs.
+- A healthy SDK repo has a deterministic verify path and a separate documented
+  live-test path. A missing layer is a gap to document or fix.
+- Run the canonical verify as the baseline; run dependents, installed-package,
+  and consumer proof when relevant, and the full gate when mandated, shared
+  inputs changed, or coverage is uncertain.
+- Claim full verification only when the unit, fixture, and live layers that
+  matter were exercised; deterministic tests alone are partial evidence for
+  production behavior.
+- Live tests against shared accounts stay non-destructive and follow the
+  repo's testing rules.
 
 ## Boundaries
 
-- Verify backend contracts with current docs, source, fixtures, or live probes rather than old SDKs alone.
-- Claim full verification only when the unit, fixture, and live layers that matter for the change were exercised.
-- Keep live coverage against shared accounts non-destructive.
-- Merging to `main` is delivery, including the release CI starts from it. Ask before publishing or writing a release by hand, coverage-threshold changes, and live writes that are not reversible.
-- Preserve naming, parity, and type-safety unless a documented reason justifies a change.
-- Keep repo-specific implementation guidance in that repo's `AGENTS.md` or
-  `docs/*`
-- Generic SDK work, end-user application code, and CLI consumer operations are
-  outside this skill.
+- Merging to `main` is delivery, including the release CI starts. Ask before
+  a manual publish or release, coverage-threshold changes, and irreversible
+  live writes.
+- End-user application code, CLI consumer operations, browser-only
+  inspection, and unrelated SDKs are outside this skill.

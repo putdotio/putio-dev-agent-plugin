@@ -5,140 +5,97 @@ description: "Develop or review put.io end-user apps and shared frontend package
 
 # put.io frontend development
 
-Apply shared put.io frontend engineering defaults after the target repository's
-own guidance and code precedent.
+Quick rules for put.io frontend work. The target repository's `AGENTS.md`,
+docs, and code precedent win; details live in the put.io Notion.
 
 ## Start
 
-1. Inventory nested guidance with `git ls-files '*AGENTS.md' '*SKILL.md'` and
-   read the `README.md` and docs for the area being changed. Target-repo
-   guidance, project-local skills, and code precedent override this skill.
-2. Identify the repo kind, stack, verify entrypoint, delivery target, and
+1. Read the repo's `AGENTS.md` files (`git ls-files '*AGENTS.md'`), `README.md`,
+   and the docs for the area you change.
+2. Identify the stack, the verify entrypoint, the delivery target, and the
    runtime proof surface.
-3. Select only the references required for the task.
+3. Open only the reference or Notion page the task needs.
 
-## Reference map
+## References
 
-- Feature code, parsing, state, errors, forms, styling, and testing:
-  [frontend defaults](./references/engineering/frontend-defaults.md)
-- README, CONTRIBUTING, security reporting, and agent-facing docs:
-  [top-level docs](./references/docs/style.md)
-- CI, verify, publishing, deployment, and release shape for packages and apps:
-  [delivery model](./references/delivery/model.md)
-- TypeScript package and app setup:
-  [TypeScript defaults](./references/engineering/typescript.md)
-- Machine tools, peer clones, agent worktrees, readiness check:
-  [environment setup](./references/environment-setup.md)
-- Local development secrets and CI credential boundaries:
-  [secrets](./references/delivery/secrets.md)
-- Secret-bearing release, signing, publishing, and deployment:
-  [release security](./references/delivery/release-security.md)
-- Browser, native, TV, emulator, simulator, and device proof:
-  [test harness](./references/test-harness/overview.md)
-- Shared test-account browser authorization:
-  [test harness pattern](./references/test-harness/pattern.md)
-- CLI-backed harness discovery, auth, reads, and writes:
-  [CLI harness contract](./references/test-harness/cli.md)
-
-Markdown links navigate this skill bundle. Other paths shown in the references,
-such as `.github/pull_request_template.md`, name files to create or inspect in
-the target repository.
-
-## Repositories
-
-- [repos.json](./repos.json) lists put.io repositories; frontend-owned entries
-  list `frontend` in `owns`.
-- Fields: `name` is the local folder, `repo` the GitHub remote, `path` the
-  canonical checkout, `owns` the responsible teams, `visibility` the
-  documentation boundary, `topics` the GitHub topic set (optional), `mode`
-  whether the team's workspace tooling manages the checkout.
-- An entry with several teams in `owns` is shared. In `putdotio/.github`,
-  frontend work stays in the `frontend-*` workflows; in
-  `putdotio/putio-dev-agent-plugin`, in the `putio-*` skills.
-- Peers sit under one folder, default `~/projects/putdotio/`. Missing path:
-  `gh repo clone <repo> <path>`, or the clone loop in
-  [environment setup](./references/environment-setup.md).
-- Check `visibility` before quoting anything across repos; private content
-  stays out of public ones.
-- For tasks that span all frontend repos: iterate the entries whose `owns`
-  includes `frontend`, skipping the `sdks` group unless the task covers SDKs;
-  enter each root, read its `AGENTS.md`, run its own verify.
+- CI, verify, release, secrets: [delivery](./references/delivery.md)
+- README, CONTRIBUTING, templates, agent docs: [docs](./references/docs.md)
+- Browser, native, TV, emulator, or device proof: [test harness](./references/test-harness.md)
+- Harness setup through the `putio` CLI: [CLI harness](./references/cli-harness.md)
+- Machine tools and peer clones: [environment setup](./references/environment-setup.md)
 
 ## Knowledge base
 
-- Lives in the put.io Notion workspace,
-  [Frontend hub](https://app.notion.com/p/dd26f70efbfb4eb0ba4dce43e3e12d01);
-  read it through the Notion MCP.
-- Holds Products, Specs, Design, Services, Delivery
-  ([Delivery model](https://app.notion.com/p/3ded546ba2f58103ae8ce55b0f7a7f9d),
-  [Release security](https://app.notion.com/p/3ded546ba2f581a39ec9e28f38e6d3fc),
-  [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228)),
-  Decisions, Analytics, and Guides.
-- Read it before product, spec, release, or secrets decisions.
-- Edit only Frontend pages. Leave other teams' pages, including ops guides in
-  shared databases, untouched unless the task asks for them.
+The put.io Notion [Frontend hub](https://app.notion.com/p/dd26f70efbfb4eb0ba4dce43e3e12d01),
+read through the Notion MCP, owns product, spec, design, and delivery detail.
+Read the matching page before deciding:
 
-## Shared defaults
+| Topic                                           | Page                                                                                    |
+| ----------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Targets, trusted refs, release identities       | [Delivery model](https://app.notion.com/p/3ded546ba2f58103ae8ce55b0f7a7f9d)             |
+| Rulesets, runners, CI cost, incident runbook    | [Release security](https://app.notion.com/p/3ded546ba2f581a39ec9e28f38e6d3fc)           |
+| Where secrets live, test accounts               | [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228)         |
+| Workflow YAML mechanics                         | [Release workflow mechanics](https://app.notion.com/p/3fdd546ba2f58124966ce3993500204e) |
+| Repo secrets setup shape                        | [Repo secrets setup](https://app.notion.com/p/3fdd546ba2f5813d8a36fd219d145900)         |
+| README and CONTRIBUTING templates               | [Repo docs](https://app.notion.com/p/3fdd546ba2f581a69d8ff6c5fc6e1c79)                  |
+| Schemas, state machines, errors, forms, styling | [Engineering defaults](https://app.notion.com/p/3fdd546ba2f58118ae24c5b5de65cb26)       |
+| Harness layers, platform notes, examples        | [Test harness guide](https://app.notion.com/p/3fdd546ba2f581b5b682c1f78d73848b)         |
 
-- Parse external input at the boundary and derive types from the validated
-  contract.
-- Model bug-sensitive flows with explicit states and exhaustive transitions.
-- Keep expected errors typed and actionable; bound unexpected failures without
-  blanking unrelated UI.
-- Keep effects at adapters and leaves so render trees remain pure.
-- Avoid type escape hatches that weaken the contract.
-- Accept usernames, passwords, and current one-time-password codes only on an
-  official put.io website. Keep the long-lived TOTP seed inside the authorized
-  secret provider that generates the current code. CLI, mobile, TV, extension,
-  harness, and other clients must delegate account authorization to the website
-  through OAuth or device-link flows and handle only the resulting codes or
-  tokens.
-- Keep build, verify, deploy, and smoke logic in repo-owned commands that CI
-  calls, with thin workflow YAML. Preserve an established task graph; use one
-  `verify` entrypoint when creating a new lane.
-- Deliver from trusted `main` or validated release refs only after verification.
-- Merging or pushing to `main` is delivery, including the deploys and
-  publishes CI starts from it. Ask before a deploy or publish run by hand,
-  secret or provider changes, writes outside the repository's forge (stores,
-  provider consoles, shared accounts), and force-pushes.
-- Keep pull request bodies as short as the change allows: the outcome, real
-  risks, and what stayed unverified. Every body carries a visual aid instead
-  of prose: reviewed screenshots or a short recording for UI, a Mermaid
-  diagram for a flow, a table for numbers, or a short code sample for an API.
-  Test counts, command logs, and review history stay out.
-- Record non-obvious code conventions in the nearest `AGENTS.md`; keep user,
-  contributor, distribution, and security documentation in their canonical
-  homes.
+Edit only Frontend pages unless the task names another team's page.
+
+## Repositories
+
+- [repos.json](./repos.json) lists put.io repositories: `name` (local folder),
+  `repo` (GitHub remote), `path` (canonical checkout under
+  `~/projects/putdotio/`), `owns`, `visibility`, `topics`, `mode`.
+- Frontend-owned entries list `frontend` in `owns`. Cross-repo tasks iterate
+  those entries, skip SDKs unless the task covers them, and run each repo's own
+  verify.
+- In shared repos, frontend work stays in `putdotio/.github`'s `frontend-*`
+  workflows and this plugin's `putio-*` skills.
+- Check `visibility` before quoting across repos; private content stays out of
+  public ones.
+
+## Rules
+
+- Parse external input at the boundary; derive types from the validated
+  contract. No casts, non-null assertions, or other escape hatches.
+- Model bug-sensitive flows as explicit states with exhaustive handling.
+- Keep expected errors typed and localized; never render raw error text.
+  Bound unexpected failures without blanking unrelated UI.
+- Keep effects at adapters and leaves so render trees stay pure.
+- Only an official put.io website accepts a username, password, or current
+  one-time code. The TOTP seed stays in the authorized secret provider. CLI,
+  mobile, TV, extension, and harness clients use OAuth or device-link flows and
+  handle only codes and tokens.
+- Build, verify, deploy, and smoke logic lives in repo-owned commands; CI calls
+  them through thin workflow YAML.
+- Merging or pushing to `main` is delivery, including the deploys it starts.
+  Ask before a manual deploy or publish, secret or provider changes, writes
+  outside the forge, and force-pushes.
+- Pull request bodies: outcome, real risks, what stayed unverified, and one
+  visual aid (screenshot, recording, Mermaid, table, or code sample). No test
+  counts, command logs, or review history.
+- Record non-obvious code conventions in the nearest `AGENTS.md`.
 
 ## Proof
 
-- Select the owner's documented checks for the affected behavior and its
-  dependents. Run the full canonical gate when owner policy requires it,
-  shared inputs changed, or focused coverage is uncertain. Keep separate
-  installed-package, downstream-consumer, browser, and device proof where those
-  boundaries matter.
-- Exercise user-visible behavior in the real browser, app, simulator, emulator,
-  or device surface when one exists.
-- Before calling UI work done, exercise first load, loading, error, and empty
-  states, small screens, and interaction state such as selection, focus,
-  hydration, and races. Inspect the result yourself instead of asking the user
-  what looks wrong.
-- Reuse passing proof while its source, inputs, and environment remain valid; a
-  new turn or handoff alone does not require another run. Name unavailable
-  proof and its exact blocker. Command discovery does not authorize live
-  actions.
-- Before a proof command launches a runtime, install cleanup and record whether
-  it started that exact target. On every exit, stop only targets it started and
-  confirm their absence; preserve pre-existing targets.
+- Run the owner's checks for the affected behavior and its dependents; run the
+  full gate when owner policy requires it, shared inputs changed, or coverage
+  is uncertain. Keep package, consumer, browser, and device proof separate.
+- Exercise user-visible changes in the real browser, app, simulator, emulator,
+  or device: first load, loading, error, empty, small screens, focus, and races.
+  Inspect the result yourself.
+- Reuse passing proof while its source, inputs, and environment are unchanged.
+  Name unavailable proof and its blocker. Discovering a command does not
+  authorize live actions.
+- Stop only the runtimes you started, and confirm they are gone.
 
 ## Boundaries
 
-- SDK repositories belong to the dedicated SDK development workflow, including
-  their docs, verification, release, and delivery shape.
-- Operating the `putio` CLI as a files, downloads, transfers, auth, or storage
-  consumer belongs to the CLI's consumer guidance. Frontend harnesses use the
-  installed CLI through the
-  [CLI harness contract](./references/test-harness/cli.md).
-- Repository policy, generic GitHub Actions hardening, build-tool migrations,
-  bootability repair, and independent code review are outside this skill; it
-  supplies put.io frontend domain guidance to whichever workflow does that work.
+- SDK repositories follow the SDK development skill.
+- Operating the `putio` CLI as a consumer follows the CLI's own guidance;
+  harnesses use it through the [CLI harness](./references/cli-harness.md)
+  contract.
+- Repository policy, generic Actions hardening, build-tool migrations, and
+  independent code review are outside this skill.

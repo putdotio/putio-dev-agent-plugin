@@ -2,8 +2,10 @@
 
 Contributor guidance for this public put.io skill catalog.
 
-- Keep top-level docs short. Put task-specific depth in
-  `skills/<name>/references/` only when it changes agent decisions.
+- Keep top-level docs short. Skills are quick references: the rules an agent
+  needs to act, plus links. Detail, templates, and examples live in the put.io
+  Notion Frontend hub; add to `skills/<name>/references/` only when it changes
+  agent decisions.
 - Skill frontmatter has `name` and `description` only. Descriptions must name
   the put.io target, the requests that activate the skill, and the nearest
   work that does not belong to it.
