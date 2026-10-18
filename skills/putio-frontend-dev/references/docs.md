@@ -10,11 +10,14 @@ Templates and section order live in Notion:
   add a repo `SECURITY.md` only when its policy differs.
 - Release and publishing details live in `docs/distribution.md`; contributor
   docs link to it.
-- Conventional root files keep their names (`README.md`, `CONTRIBUTING.md`,
-  `LICENSE`, `SECURITY.md`, `AGENTS.md`, `CLAUDE.md`); every other doc is
-  kebab-case, such as `docs/distribution.md`.
+- Conventional root files (`README.md`, `CONTRIBUTING.md`, `LICENSE`,
+  `SECURITY.md`, `AGENTS.md`, `CLAUDE.md`) and names a platform requires
+  (`.github/pull_request_template.md`, `.github/ISSUE_TEMPLATE/`,
+  `CODEOWNERS`) keep their names; every other doc is kebab-case, such as
+  `docs/distribution.md`.
 - PR and issue templates hold the review checklist; `CONTRIBUTING.md` only
-  summarizes. Templates name the `gh pr create --attach` media route.
+  summarizes. Templates name the media route: `gh pr create --attach` or
+  `gh pr comment --attach` (gh 2.99+).
 - When a repo uses `AGENTS.md`, `CLAUDE.md` is a regular file containing only
   `@AGENTS.md`, not a copy or a symlink: some plugin installers and fetchers
   reject repositories that contain symlinks.

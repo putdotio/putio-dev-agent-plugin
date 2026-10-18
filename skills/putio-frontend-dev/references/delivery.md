@@ -37,7 +37,9 @@ owns its targets, triggers, and gates.
 
 - Default verify runs without secrets; secret-dependent flows get their own
   target (`live-test`, `deploy`, `release`).
-- Local secrets: a SOPS ciphertext input, a repo-owned `secrets-setup` that
+- Native Xcode or Fastlane builds, repos that hold signing material, and repos
+  whose `.env.example` carries plain device or runtime values follow their own
+  setup. Other local secrets use a SOPS ciphertext input, a repo-owned `secrets-setup` that
   validates and writes a gitignored `0600` `.env.local`, and `secrets-clean`.
   Fail closed; no password-manager fallback or interactive login.
 - Keep `secrets-setup` out of install hooks. `.gitignore` keeps
