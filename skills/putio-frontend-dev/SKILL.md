@@ -142,6 +142,3 @@ the target repository.
 - Repository policy, generic GitHub Actions hardening, build-tool migrations,
   bootability repair, and independent code review are outside this skill; it
   supplies put.io frontend domain guidance to whichever workflow does that work.
-- Keep machine-specific facts, credentials, account details, and private
-  support context out of this public skill; the repository registry carries
-  names, remotes, canonical paths, owners, visibility, topics, and mode only.

@@ -25,21 +25,46 @@ Common harness concerns:
 - extension permissions, service worker lifecycle, and content-script injection state
 - reliable screenshots and traces for visual or startup failures
 
-## iOS / Android native
+## Android and Android TV
+
+Likely tools:
+
+- Gradle or repo-local build commands
+- Android `adb`, UI Automator, accessibility dumps, logcat, screencap, and
+  screenrecord
+- emulator manager, hardware, or cloud-device provider CLIs
+
+Common harness concerns:
+
+- emulator boot readiness and device selection when multiple targets are
+  attached
+- package install, activity launch, deeplinks, intents, and launch arguments
+- app reinstall wiping local session state
+- auth/session seeding through approved development hooks, checked before the product flow starts
+- logcat noise filtering; logs, screenshots, and accessibility state that
+  explain failures
+- on TV, focus navigation with D-pad keys
+
+## iOS and tvOS
 
 Likely tools:
 
 - Xcode command-line tooling, `simctl`, XCTest, or UI test runners
-- Gradle, Android `adb`, UI Automator, accessibility dumps, logcat, and screencap
-- emulator, simulator, hardware, or cloud-device provider CLIs
+- repo-local build scripts for signing and provisioning
+- simulator, hardware, or cloud-device provider CLIs
 
 Common harness concerns:
 
-- simulator or emulator boot readiness
-- install, launch, deeplink, intent, and launch-argument support
+- simulator boot readiness and simulator versus hardware support
+- provisioning, signing, and team IDs
+- install, launch, deeplink, and launch-argument support
 - app reinstall wiping local session state
 - auth/session seeding through approved development hooks, checked before the product flow starts
 - logs, screenshots, and accessibility state that explain failures
+- on tvOS, remote/button events through XCTest or simulator tooling, and
+  video/playback assertions that may need app test hooks
+
+Keep signing identities, provisioning profiles, device identifiers, and account facts outside git.
 
 ## Tizen
 
@@ -79,45 +104,6 @@ Common harness concerns:
 - focus and playback state
 - screenshots and review HTML for visual proof
 - proof includes a keypress sequence reaching the expected focus and playback responding to media keys
-
-## Android TV
-
-Likely tools:
-
-- Android `adb`
-- Gradle or repo-local build commands
-- emulator manager or cloud-device provider CLI
-- UI Automator, accessibility dumps, logcat, and screencap
-
-Common harness concerns:
-
-- emulator boot readiness
-- device selection when multiple targets are attached
-- package install and activity launch
-- deeplinks and intents
-- focus navigation with DPAD keys
-- logcat noise filtering
-- screenshot and screenrecord artifacts
-
-## Apple TV / tvOS
-
-Likely tools:
-
-- Xcode command-line tooling
-- `simctl` for simulators
-- XCTest or UI test runners
-- repo-local build scripts for signing and provisioning
-
-Common harness concerns:
-
-- simulator versus hardware support
-- provisioning, signing, and team IDs
-- app install and launch
-- remote/button events through XCTest or simulator tooling
-- screenshots and logs
-- video/playback assertions that may need app test hooks
-
-Keep signing identities, provisioning profiles, device identifiers, and account facts outside git.
 
 ## Other platforms
 
