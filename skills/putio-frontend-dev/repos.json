@@ -37,7 +37,6 @@
   ],
   "infra": [
     { "name": "putio-frontend-vault", "repo": "putdotio/putio-frontend-vault", "path": "~/projects/putdotio/putio-frontend-vault", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "sops", "age-encryption", "secrets-management"] },
-    { "name": "putio-code-signing-apple", "repo": "putdotio/putio-code-signing-apple", "path": "~/projects/putdotio/putio-code-signing-apple", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "apple", "code-signing", "fastlane-match", "certificates"] },
     { "name": "putio-static", "repo": "putdotio/putio-static", "path": "~/projects/putdotio/putio-static", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "static-assets", "sst", "aws", "s3", "cloudfront"] }
   ],
   "tools": [
