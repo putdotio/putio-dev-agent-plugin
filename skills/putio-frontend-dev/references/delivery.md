@@ -42,7 +42,7 @@ TypeScript repos use Vite+ (`vp`) with `check`, `build`, `test`, and `verify`.
   plus `secrets-clean`. It fails closed, with no password-manager fallback or
   interactive login, and stays out of install hooks. `.gitignore` keeps
   `!.env.example` tracked.
-- Exceptions keep their own setup: native Xcode or Fastlane builds, repos that
+- Exceptions keep their own setup: native Xcode builds, repos that
   hold signing material, and repos whose `.env.example` carries plain device or
   runtime values.
 - CI reads Environment secrets or OIDC; it never decrypts the vault or calls
