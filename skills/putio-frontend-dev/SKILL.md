@@ -36,7 +36,7 @@ Read the matching page before deciding:
 | Where secrets live, test accounts               | [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228)         |
 | Workflow YAML mechanics                         | [Release workflow mechanics](https://app.notion.com/p/3fdd546ba2f58124966ce3993500204e) |
 | Repo secrets setup shape                        | [Repo secrets setup](https://app.notion.com/p/3fdd546ba2f5813d8a36fd219d145900)         |
-| README and CONTRIBUTING templates               | [Repo docs](https://app.notion.com/p/3fdd546ba2f581a69d8ff6c5fc6e1c79)                  |
+| README and CONTRIBUTING templates               | [Frontend repo docs](https://app.notion.com/p/3fdd546ba2f581a69d8ff6c5fc6e1c79)         |
 | Schemas, state machines, errors, forms, styling | [Engineering defaults](https://app.notion.com/p/3fdd546ba2f58118ae24c5b5de65cb26)       |
 | Harness layers, platform notes, examples        | [Test harness guide](https://app.notion.com/p/3fdd546ba2f581b5b682c1f78d73848b)         |
 
