@@ -33,8 +33,8 @@ fix the lower one.
   [design.md format](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md):
   YAML front-matter tokens, then `##` sections in the spec's order. Product
   rules beyond the spec go in extra sections after them.
-- Front-matter tokens mirror `@putdotio/design`: generate them, or check them
-  against the locked release in the repository's gate.
+- Its tokens are generated from the locked `@putdotio/design` release and
+  checked in the repository's gate, never typed by hand.
 - `npx @google/design.md lint DESIGN.md` runs in the repository's verify gate.
 - A UI change that changes the design updates `DESIGN.md` in the same pull
   request, unless an earlier docs pull request already recorded it.
@@ -51,7 +51,7 @@ links are private: they live in Notion, never in a repository.
 - Read the canvas right before each publish. Others edit it between your
   reads.
 - Each canvas loads fonts and Phosphor from its own uploaded assets. Copy
-  assets between canvases server-side, at most ten per call, then repoint the
-  canvas's kit CSS to the new asset URLs.
+  them between canvases server-side, then repoint the canvas's kit CSS to the
+  new asset URLs.
 - Reference captures of ecosystem apps stay on the canvas's reference pages,
   labeled with the app's name. They never enter a repository.

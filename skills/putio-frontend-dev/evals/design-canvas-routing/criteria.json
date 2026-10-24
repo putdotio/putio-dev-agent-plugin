@@ -14,7 +14,7 @@
     },
     {
       "name": "routes_new_token",
-      "description": "Sends the new warning color to @putdotio/design first and takes its value from that release; any value in the canvas or DESIGN.md is generated from or checked against that release, never typed by hand.",
+      "description": "Sends the new warning color to @putdotio/design first; the canvas and DESIGN.md take its value from that release through generation, never by hand.",
       "max_score": 3
     },
     {
