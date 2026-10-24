@@ -37,7 +37,7 @@ fix the lower one.
   against the locked release in the repository's gate.
 - `npx @google/design.md lint DESIGN.md` runs in the repository's verify gate.
 - A UI change that changes the design updates `DESIGN.md` in the same pull
-  request.
+  request, unless an earlier docs pull request already recorded it.
 
 ## Canvases
 

@@ -9,12 +9,12 @@
     },
     {
       "name": "reads_before_publish",
-      "description": "Reads the current canvas right before publishing the new board, and starts the board from captures of the shipped app.",
+      "description": "With the claude.ai Artifact tool, reads the current canvas right before publishing the new board and starts it from captures of the shipped app; without it, names the board and the change for the user to make.",
       "max_score": 2
     },
     {
       "name": "routes_new_token",
-      "description": "Sends the new warning color to @putdotio/design first and takes its value from that release; types no color value by hand into the canvas or DESIGN.md.",
+      "description": "Sends the new warning color to @putdotio/design first and takes its value from that release; any value in the canvas or DESIGN.md is generated from or checked against that release, never typed by hand.",
       "max_score": 3
     },
     {
