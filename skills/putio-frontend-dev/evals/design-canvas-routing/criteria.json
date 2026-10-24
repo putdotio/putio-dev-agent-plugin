@@ -1,0 +1,31 @@
+{
+  "context": "Tests that design canvas and DESIGN.md work activates the frontend skill's design reference and follows its precedence.",
+  "type": "weighted_checklist",
+  "checklist": [
+    {
+      "name": "finds_canvas_via_index",
+      "description": "Locates the Android canvas through the put.io Notion Design canvases index rather than a guessed or repository-stored link, and keeps the canvas link out of the repository.",
+      "max_score": 2
+    },
+    {
+      "name": "reads_before_publish",
+      "description": "With the claude.ai Artifact tool, reads the current canvas right before publishing the new board and starts it from captures of the shipped app; without it, names the board and the change for the user to make.",
+      "max_score": 2
+    },
+    {
+      "name": "routes_new_token",
+      "description": "Sends the new warning color to @putdotio/design first; the canvas and DESIGN.md take its value from that release through generation, never by hand.",
+      "max_score": 3
+    },
+    {
+      "name": "records_in_design_md",
+      "description": "Records the decision in the Android repository's root DESIGN.md in the design.md format and runs its lint, without changing app code.",
+      "max_score": 2
+    },
+    {
+      "name": "keeps_canvas_scope",
+      "description": "Does not prescribe code-level frontend rules (state, effects, tests) for the canvas and contract work.",
+      "max_score": 1
+    }
+  ]
+}
