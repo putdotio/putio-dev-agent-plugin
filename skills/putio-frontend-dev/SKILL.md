@@ -1,6 +1,6 @@
 ---
 name: putio-frontend-dev
-description: "put.io end-user apps and shared frontend packages: build or review UI, state, tests, docs, test harnesses and their auth, delivery, and machine setup. Use in a put.io frontend repository or for put.io frontend conventions. SDK and API client work, putio CLI consumer operations (CLI use inside a test harness stays here), browser-only put.io inspection, and non-put.io frontends belong elsewhere."
+description: "put.io end-user apps and shared frontend packages: build or review UI, design canvases and DESIGN.md contracts, state, tests, docs, test harnesses and their auth, delivery, and machine setup. Use in a put.io frontend repository or for put.io frontend conventions. SDK and API client work, putio CLI consumer operations (CLI use inside a test harness stays here), browser-only put.io inspection, and non-put.io frontends belong elsewhere."
 ---
 
 # put.io frontend development
@@ -14,6 +14,8 @@ The target repo's `AGENTS.md`, docs, and code precedent win over this skill.
 2. Name the stack, the verify entrypoint, the delivery target, and where you
    will run the change to prove it.
 3. Open the reference or [Notion page](#knowledge-base) the task needs:
+   - Design canvases, `DESIGN.md`, UI built to a design:
+     [design](./references/design.md)
    - CI, verify, release, secrets: [delivery](./references/delivery.md)
    - README, CONTRIBUTING, templates, agent docs: [docs](./references/docs.md)
    - Browser, native, TV, emulator, or device proof:
@@ -31,6 +33,7 @@ Read the matching page before deciding:
 
 | Topic                                           | Page                                                                                    |
 | ----------------------------------------------- | --------------------------------------------------------------------------------------- |
+| Canvas index, design workflow                   | [Design canvases](https://app.notion.com/p/403d546ba2f581b89776c1760cf77bae)            |
 | Targets, trusted refs, release identities       | [Delivery model](https://app.notion.com/p/3ded546ba2f58103ae8ce55b0f7a7f9d)             |
 | Rulesets, runners, CI cost, incident runbook    | [Release security](https://app.notion.com/p/3ded546ba2f581a39ec9e28f38e6d3fc)           |
 | Where secrets live, test accounts               | [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228)         |
