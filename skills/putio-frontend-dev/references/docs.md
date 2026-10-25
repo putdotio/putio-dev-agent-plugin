@@ -9,12 +9,14 @@ templates live in Notion:
 - Security reporting follows the
   [org-wide policy](https://github.com/putdotio/.github/blob/main/SECURITY.md);
   a repo adds `SECURITY.md` only when its policy differs.
-- No `docs/distribution.md`: workflows and release config document release
-  and publishing. A step a human must take or a rule they must not break that
-  no file states (a store submission, a version pin, a setting outside the
-  repo) gets a line in `AGENTS.md` or `CONTRIBUTING.md` that links the
-  workflow.
-- Docs use kebab-case names, such as `docs/test-harness.md`. Conventional root
+- Code, tests, workflows, and release config are the doc. No
+  `docs/distribution.md`, behaviour specs, architecture overviews, testing
+  guides, or harness and lane catalogs; a rule a test pins is documented by
+  that test. A step a human must take or a hazard no check catches (a store
+  submission, a version pin, a setting outside the repo) gets a line in
+  `AGENTS.md` or `CONTRIBUTING.md` that links its owner. Extra docs are for
+  users of a shipped package or for license text.
+- Docs use kebab-case names, such as `docs/migrating-v12.md`. Conventional root
   files (`README.md`, `CONTRIBUTING.md`, `LICENSE`, `SECURITY.md`, `AGENTS.md`,
   `CLAUDE.md`) and platform-required names (`.github/pull_request_template.md`,
   `.github/ISSUE_TEMPLATE/`, `CODEOWNERS`, `SKILL.md`) keep theirs.
