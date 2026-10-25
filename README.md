@@ -40,7 +40,7 @@ claude plugin marketplace add putdotio/putio-dev-agent-plugin
 claude plugin install putio-dev@putio
 ```
 
-There is no publish pipeline: the marketplace serves `main`.
+The marketplace serves `main`.
 
 Codex takes the same marketplace with `codex plugin marketplace add` and
 `codex plugin add`. The root `plugin.json` follows
@@ -50,7 +50,6 @@ plugins from Git.
 ## Docs
 
 - [Contributing](CONTRIBUTING.md): setup, skill layout rules, and the verify gate
-- [Skill fleet](docs/skill-fleet.md): the put.io skill inventory
 
 ## Security
 

@@ -38,8 +38,7 @@ product direction under Frontend hub › Products.
 ## Endpoint changes
 
 1. Check backend behavior, its tests, and current app usage before widening or
-   changing a contract. Find the tracked source, test, fixture, and consumer
-   paths with `git ls-files | xargs rg -n "<route|field>"`.
+   changing a contract.
 2. Update together: request input or query model, response parser or decode
    model, operation-specific error mapping, and the public method or export.
 3. Add deterministic tests for request shaping, parsing, errors, and the
@@ -61,10 +60,8 @@ product direction under Frontend hub › Products.
 - Live tests against shared accounts stay non-destructive and follow the
   repo's testing rules.
 
-## Boundaries
+## Delivery
 
 - Merging to `main` is delivery, including the release CI starts. Ask first
   for a manual publish or release, coverage-threshold changes, and
   irreversible live writes.
-- End-user app code, CLI consumer operations, browser-only inspection, and
-  non-put.io SDKs are outside this skill.
