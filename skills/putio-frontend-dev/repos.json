@@ -40,7 +40,6 @@
     { "name": "putio-static", "repo": "putdotio/putio-static", "path": "~/projects/putdotio/putio-static", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "static-assets", "sst", "aws", "s3", "cloudfront"] }
   ],
   "tools": [
-    { "name": "vref", "repo": "putdotio/vref", "path": "~/projects/putdotio/vref", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "cli", "visual-reference", "screenshots", "typescript", "developer-tools"] },
     { "name": "taizn", "repo": "putdotio/taizn", "path": "~/projects/putdotio/taizn", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "cli", "harness", "samsung", "samsung-tv", "tizen", "tizen-tv", "tv", "widget", "typescript"] },
     { "name": "rokit", "repo": "putdotio/rokit", "path": "~/projects/putdotio/rokit", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "cli", "harness", "roku", "tv", "brightscript", "typescript", "developer-tools"] }
   ]
