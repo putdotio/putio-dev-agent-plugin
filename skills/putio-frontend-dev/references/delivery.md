@@ -4,7 +4,7 @@ Workflow detail lives in Notion:
 [Release workflow mechanics](https://app.notion.com/p/3fdd546ba2f58124966ce3993500204e),
 [Repo secrets setup](https://app.notion.com/p/3fdd546ba2f5813d8a36fd219d145900),
 and the Delivery pages in [SKILL.md](../SKILL.md#knowledge-base). Each repo's
-`docs/distribution.md` owns its targets, triggers, and gates.
+workflows and release config own its targets, triggers, and gates.
 
 ## Verify
 
@@ -30,8 +30,6 @@ TypeScript repos use Vite+ (`vp`) with `check`, `build`, `test`, and `verify`.
 - Jobs that run project code never use `pull_request_target`.
 - After a delivery change, run the artifact or app smoke check, or record the
   missing one as a repo gap.
-- Update `docs/distribution.md` in the same change when release, cache,
-  provenance, or signing behavior changes.
 
 ## Secrets
 

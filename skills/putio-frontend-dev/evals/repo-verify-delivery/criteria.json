@@ -18,8 +18,8 @@
       "max_score": 2
     },
     {
-      "name": "documents_distribution_contract",
-      "description": "Places release, publishing, or deployment contract details in `docs/distribution.md` with contributor docs linking to it when needed.",
+      "name": "leaves_release_docs_to_config",
+      "description": "Leaves release, publishing, and deployment behavior to the workflows and release config, with no `docs/distribution.md`; only a human-only step or must-not-break rule gets a line in `AGENTS.md` or `CONTRIBUTING.md`.",
       "max_score": 2
     },
     {
