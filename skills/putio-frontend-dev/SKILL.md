@@ -47,9 +47,8 @@ Edit Frontend pages; edit another team's page only when the task names it.
 
 ## Repositories
 
-[repos.json](./repos.json) lists put.io repositories: `name` (local folder),
-`repo` (GitHub remote), `path` (canonical checkout under `~/projects/putdotio/`),
-`owns`, `visibility`, `topics`, and `mode`.
+[repos.json](./repos.json) lists put.io repositories with their canonical
+checkout path, owning teams, and visibility.
 
 - Frontend repos list `frontend` in `owns`. A cross-repo task iterates those,
   includes SDKs only when the task does, and runs each repo's own verify.
@@ -98,8 +97,5 @@ Edit Frontend pages; edit another team's page only when the task names it.
 
 ## Boundaries
 
-- SDK repositories: the SDK development skill.
-- The `putio` CLI as a consumer: the CLI's own guidance. Harnesses use it
-  through the [CLI harness](./references/cli-harness.md) contract.
-- Repository policy, generic Actions hardening, build-tool migrations, and
-  independent code review are outside this skill.
+Repository policy, generic Actions hardening, build-tool migrations, and
+independent code review are outside this skill.

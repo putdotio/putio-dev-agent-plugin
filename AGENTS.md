@@ -23,6 +23,6 @@ Contributor guidance for this public put.io skill catalog.
 - Keep eval scenarios under `skills/<name>/evals/<scenario>/` as `task.md`
   plus `criteria.json`. Update an eval only when its scenario or acceptance
   criteria changed.
-- Run `pnpm run verify` before handoff. CI runs the same keyless workflow and
-  skill lint gate.
+- Setup: `pnpm install --frozen-lockfile`. Proof for every change:
+  `pnpm run verify`, the same gate CI runs.
 - Use repo-relative links in checked-in Markdown.
