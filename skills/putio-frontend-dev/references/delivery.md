@@ -1,23 +1,27 @@
 # Delivery
 
-Workflow detail lives in Notion:
-[Release workflow mechanics](https://app.notion.com/p/3fdd546ba2f58124966ce3993500204e),
-[Repo secrets setup](https://app.notion.com/p/3fdd546ba2f5813d8a36fd219d145900),
-and the Delivery pages in [SKILL.md](../SKILL.md#knowledge-base). Each repo's
-workflows and release config own its targets, triggers, and gates.
+Workflow detail lives in the put.io Notion:
+
+- [Delivery model](https://app.notion.com/p/3ded546ba2f58103ae8ce55b0f7a7f9d):
+  targets, trusted refs, release identities
+- [Release security](https://app.notion.com/p/3ded546ba2f581a39ec9e28f38e6d3fc):
+  rulesets, runners, CI cost, incident runbook
+- [Release workflow mechanics](https://app.notion.com/p/3fdd546ba2f58124966ce3993500204e):
+  workflow YAML
+- [Repo secrets setup](https://app.notion.com/p/3fdd546ba2f5813d8a36fd219d145900):
+  repo secrets setup shape
+
+Each repo's workflows and release config own its targets, triggers, and gates.
 
 ## Verify
 
-1. Read package scripts, Makefile, workflows, docs, and `.env.example` before
-   editing delivery.
-2. Keep one repo-local `verify` entrypoint that CI calls. If the repo already
-   has a multi-lane task graph, keep its lanes.
-3. End `verify` with the shared `actions/links` and `actions/scan` steps from
+1. Build, verify, deploy, and smoke logic lives in repo commands. CI calls one
+   repo-local `verify` from thin workflow YAML; keep an existing multi-lane
+   task graph's lanes.
+2. End `verify` with the shared `actions/links` and `actions/scan` steps from
    [putdotio/.github](https://github.com/putdotio/.github), pinned to a tagged
    commit; its README owns the calling contract.
-4. Get `verify` passing locally before touching publish or deploy automation.
-
-TypeScript repos use Vite+ (`vp`) with `check`, `build`, `test`, and `verify`.
+3. Get `verify` passing locally before touching publish or deploy automation.
 
 ## Release
 

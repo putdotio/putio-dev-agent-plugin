@@ -1,6 +1,6 @@
 ---
 name: putio-frontend-dev
-description: "put.io end-user apps and shared frontend packages: build or review UI, design canvases and DESIGN.md contracts, state, tests, docs, test harnesses and their auth, delivery, and machine setup. Use in a put.io frontend repository or for put.io frontend conventions. SDK and API client work, putio CLI consumer operations (CLI use inside a test harness stays here), browser-only put.io inspection, and non-put.io frontends belong elsewhere."
+description: "put.io end-user apps and shared frontend packages: build or review UI, design canvases, DESIGN.md, tests, test harnesses, docs, delivery, and machine setup. Use in a put.io frontend repository or for put.io frontend conventions. SDK and API client work, putio CLI consumer operations (CLI use inside a test harness stays here), browser-only put.io inspection, and non-put.io frontends belong elsewhere."
 ---
 
 # put.io frontend development
@@ -31,17 +31,10 @@ The put.io Notion [Frontend hub](https://app.notion.com/p/dd26f70efbfb4eb0ba4dce
 read through the Notion MCP, owns product, spec, design, and delivery detail.
 Read the matching page before deciding:
 
-| Topic                                           | Page                                                                                    |
-| ----------------------------------------------- | --------------------------------------------------------------------------------------- |
-| Canvas index, design workflow                   | [Design canvases](https://app.notion.com/p/403d546ba2f581b89776c1760cf77bae)            |
-| Targets, trusted refs, release identities       | [Delivery model](https://app.notion.com/p/3ded546ba2f58103ae8ce55b0f7a7f9d)             |
-| Rulesets, runners, CI cost, incident runbook    | [Release security](https://app.notion.com/p/3ded546ba2f581a39ec9e28f38e6d3fc)           |
-| Where secrets live, test accounts               | [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228)         |
-| Workflow YAML mechanics                         | [Release workflow mechanics](https://app.notion.com/p/3fdd546ba2f58124966ce3993500204e) |
-| Repo secrets setup shape                        | [Repo secrets setup](https://app.notion.com/p/3fdd546ba2f5813d8a36fd219d145900)         |
-| README and CONTRIBUTING templates               | [Frontend repo docs](https://app.notion.com/p/3fdd546ba2f581a69d8ff6c5fc6e1c79)         |
-| Schemas, state machines, errors, forms, styling | [Engineering defaults](https://app.notion.com/p/3fdd546ba2f58118ae24c5b5de65cb26)       |
-| Harness layers, platform notes, examples        | [Test harness guide](https://app.notion.com/p/3fdd546ba2f581b5b682c1f78d73848b)         |
+| Topic                                           | Page                                                                              |
+| ----------------------------------------------- | --------------------------------------------------------------------------------- |
+| Where secrets live, test accounts               | [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228)   |
+| Schemas, state machines, errors, forms, styling | [Engineering defaults](https://app.notion.com/p/3fdd546ba2f58118ae24c5b5de65cb26) |
 
 Edit Frontend pages; edit another team's page only when the task names it.
 
@@ -72,8 +65,6 @@ checkout path, owning teams, and visibility.
   or current one-time code, and the TOTP seed stays in the authorized secret
   provider. CLI, mobile, TV, extension, and harness clients sign in through
   OAuth or device-link and handle only codes and tokens.
-- **CI**: build, verify, deploy, and smoke logic lives in repo commands; CI
-  calls them from thin workflow YAML.
 - **Delivery**: merging or pushing to `main` is delivery, including the
   deploys it starts. Ask first for a manual deploy or publish, secret or
   provider changes, writes outside the forge, and force-pushes.

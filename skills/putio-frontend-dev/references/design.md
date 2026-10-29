@@ -1,8 +1,5 @@
 # Design
 
-Use when a task changes how a put.io surface looks: a design canvas board, a
-repository's `DESIGN.md`, or UI built to match either.
-
 ## Precedence
 
 Three sources, highest first. When they disagree, the higher one wins and you
@@ -36,8 +33,6 @@ fix the lower one.
 - Its tokens are generated from the locked `@putdotio/design` release and
   checked in the repository's gate, never typed by hand.
 - The repository's verify gate lints `DESIGN.md` against the format.
-- A UI change that changes the design updates `DESIGN.md` in the same pull
-  request, unless an earlier docs pull request already recorded it.
 
 ## Canvases
 

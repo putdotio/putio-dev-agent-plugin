@@ -15,7 +15,6 @@ mise use -g gh jq age sops github:putdotio/putio-cli
   [delivery](./delivery.md#secrets)
 - `putio`: the put.io CLI test harnesses use, see
   [CLI harness](./cli-harness.md)
-- Apple targets need Xcode on macOS; Android targets need Android Studio
 
 ## Repositories
 
