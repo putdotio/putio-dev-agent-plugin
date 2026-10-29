@@ -1,8 +1,5 @@
 # SDK release supply chain
 
-For publishing packages, signing artifacts, creating releases, or building
-distributable binaries. A stricter target-repo policy wins.
-
 put.io SDKs follow the frontend release policy in the put.io Notion, under
 Frontend / Delivery:
 
@@ -21,8 +18,8 @@ Check live provider settings before claiming a security posture.
   manual ref validated in a secretless job.
 - **Credentials**: load narrowly scoped publish or signing credentials from a
   protected GitHub Environment or OIDC, only at that step. Prefer registry
-  trusted publishing; for npm, Trusted Publishing with `id-token: write` and
-  provenance.
+  trusted publishing. npm SDKs call `putdotio/.github`'s
+  `frontend-release-npm` workflow, which owns Trusted Publishing.
 - **Triggers**: workflows that run repo code, install, build, test, package,
   sign, or publish never use `pull_request_target`.
 - **Pins**: pin release, publish, upload, and signing actions to full commit

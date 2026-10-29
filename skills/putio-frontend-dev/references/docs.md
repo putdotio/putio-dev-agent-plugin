@@ -16,10 +16,7 @@ templates live in Notion:
   submission, a version pin, a setting outside the repo) gets a line in
   `AGENTS.md` or `CONTRIBUTING.md` that links its owner. Extra docs are for
   users of a shipped package or for license text.
-- Docs use kebab-case names, such as `docs/migrating-v12.md`. Conventional root
-  files (`README.md`, `CONTRIBUTING.md`, `LICENSE`, `SECURITY.md`, `AGENTS.md`,
-  `CLAUDE.md`) and platform-required names (`.github/pull_request_template.md`,
-  `.github/ISSUE_TEMPLATE/`, `CODEOWNERS`, `SKILL.md`) keep theirs.
+- Docs use kebab-case names, such as `docs/migrating-v12.md`.
 - PR and issue templates hold the review checklist; `CONTRIBUTING.md`
   summarizes it. Templates name the media route: `gh pr create --attach` or
   `gh pr comment --attach` (gh 2.99+).

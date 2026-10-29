@@ -5,11 +5,13 @@ description: "put.io SDK and API client packages in TypeScript, Swift, Kotlin, a
 
 # put.io SDK development
 
-The target repo's `AGENTS.md`, docs, verify command, and release policy win
+The target repo's `AGENTS.md`, docs, and release policy win
 over this skill. Scope doctrine, language notes, and code patterns live in the
 put.io Notion
 [SDK engineering guide](https://app.notion.com/p/3fdd546ba2f5817a9a06fc5f5f99db7b);
-product direction under Frontend hub › Products.
+product direction under
+[Frontend hub](https://app.notion.com/p/dd26f70efbfb4eb0ba4dce43e3e12d01) ›
+Products.
 
 ## Start
 
