@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=24.19.0"
   },
-  "packageManager": "pnpm@12.15.0",
+  "packageManager": "pnpm@12.16.0",
   "scripts": {
     "lint:actions": "github-actionlint .github/workflows/*.yml",
     "markdown:check": "oxfmt --check \"**/*.md\"",
@@ -15,6 +15,6 @@
   "devDependencies": {
     "@uinaf/skillcheck": "1.7.7",
     "github-actionlint": "1.7.12",
-    "oxfmt": "0.74.0"
+    "oxfmt": "0.75.0"
   }
 }
