@@ -36,6 +36,7 @@
     { "name": "putio-sockjs", "repo": "putdotio/putio-sockjs", "path": "~/projects/putdotio/putio-sockjs", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "sockjs", "realtime", "websocket", "typescript"] }
   ],
   "infra": [
+    { "name": "putio-infra", "repo": "putdotio/infra", "path": "~/projects/putdotio/putio-infra", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "infrastructure", "opentofu", "aws", "iam"] },
     { "name": "putio-frontend-vault", "repo": "putdotio/putio-frontend-vault", "path": "~/projects/putdotio/putio-frontend-vault", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "sops", "age-encryption", "secrets-management"] },
     { "name": "putio-static", "repo": "putdotio/putio-static", "path": "~/projects/putdotio/putio-static", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "static-assets", "sst", "aws", "s3", "cloudfront"] }
   ],
