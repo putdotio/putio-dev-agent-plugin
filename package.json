@@ -5,7 +5,7 @@
   "engines": {
     "node": ">=24.19.0"
   },
-  "packageManager": "pnpm@12.16.0",
+  "packageManager": "pnpm@12.16.1",
   "scripts": {
     "lint:actions": "github-actionlint .github/workflows/*.yml",
     "markdown:check": "oxfmt --check \"**/*.md\"",
