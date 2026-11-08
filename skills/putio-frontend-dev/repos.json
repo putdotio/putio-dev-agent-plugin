@@ -18,6 +18,7 @@
     { "name": "putio-ios", "repo": "putdotio/putio-ios", "path": "~/projects/putdotio/putio-ios", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "ios", "swift", "mobile", "tvos", "apple"] },
     { "name": "putio-android", "repo": "putdotio/putio-android", "path": "~/projects/putdotio/putio-android", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "android", "kotlin", "mobile", "android-tv"] },
     { "name": "putio-cli", "repo": "putdotio/putio-cli", "path": "~/projects/putdotio/putio-cli", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "cli", "typescript", "putio-api", "developer-tools"] },
+    { "name": "putio-mcp", "repo": "putdotio/putio-mcp", "path": "~/projects/putdotio/putio-mcp", "owns": ["frontend"], "mode": "managed", "visibility": "private", "topics": ["putio", "frontend", "mcp", "model-context-protocol", "typescript", "putio-api", "developer-tools"] },
     { "name": "putio-roku", "repo": "putdotio/putio-roku", "path": "~/projects/putdotio/putio-roku", "owns": ["frontend"], "mode": "managed", "visibility": "public", "topics": ["putio", "frontend", "open-source", "roku", "brightscript", "tv", "streaming"] }
   ],
   "extensions": [
