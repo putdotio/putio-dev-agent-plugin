@@ -30,3 +30,19 @@ Layers, platform notes, and examples live in Notion:
 - Harness payloads hold only non-account test fixtures. Unattended runs use
   dedicated machine identities.
 - Through the `putio` CLI, follow the [CLI harness](./cli-harness.md) contract.
+
+## Device-code budget
+
+put.io gives device-code requests a small per-IP budget. Every lane, harness,
+and device on one network shares it, and requests made while limited still
+count and extend the ban.
+
+- Signed-out and sign-in proofs run on a seeded API. Only a dedicated live
+  sign-in journey requests real codes.
+- Live proofs start signed in. Reuse a session: keep the install, or cache the
+  app's token per host outside the repo, owner-only. Never request a code per
+  run or per fresh device.
+- Never sign out a reused session in teardown; that revokes it for every run.
+- Run code-spending steps one at a time across parallel lanes.
+- Never retry or poll a 429. Stop and report `X-RateLimit-Reset`. A
+  `captcha-needed` ban needs a person on the same network.
