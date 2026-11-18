@@ -36,7 +36,7 @@ Read the matching page before deciding:
 | Where secrets live, test accounts               | [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228)   |
 | Schemas, state machines, errors, forms, styling | [Engineering defaults](https://app.notion.com/p/3fdd546ba2f58118ae24c5b5de65cb26) |
 
-Edit Frontend pages; edit another team's page only when the task names it.
+Edit a Notion page only when the task asks for that edit, and only a Frontend page unless the task names another.
 
 ## Repositories
 
