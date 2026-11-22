@@ -33,5 +33,6 @@ Check live provider settings before claiming a security posture.
   version, tag, package metadata, and public repo URL aligned.
 - **Handoff**: the registry package or GitHub Release asset is the durable
   artifact, not an Actions artifact. Verify the published artifact matches
-  what you inspected, then promote it without rebuilding, and record the commit SHA, tag, package version, artifact
-  digest, workflow run, and published artifact identity.
+  what you inspected, then promote it without rebuilding, and record the
+  commit SHA, tag, package version, artifact digest, workflow run, and
+  published artifact identity.

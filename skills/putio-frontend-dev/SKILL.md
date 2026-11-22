@@ -85,8 +85,3 @@ checkout path, owning teams, and visibility.
 - Name each proof you could not run and what blocked it. Finding a command
   does not authorize live actions.
 - Stop the runtimes you started.
-
-## Boundaries
-
-Repository policy, generic Actions hardening, build-tool migrations, and
-independent code review are outside this skill.

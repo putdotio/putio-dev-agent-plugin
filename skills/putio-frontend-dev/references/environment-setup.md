@@ -50,5 +50,4 @@ jq -r '.[][] | .path' "$registry" \
 ```
 
 The machine is ready when the check prints no `missing` lines and
-`gh auth status` shows the put.io account. The vault repository checks secrets
-separately.
+`gh auth status` shows the put.io account.

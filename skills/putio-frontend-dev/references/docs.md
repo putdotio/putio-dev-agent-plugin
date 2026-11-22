@@ -21,7 +21,6 @@ templates live in Notion:
   summarizes it. Templates name the media route: `gh pr create --attach` or
   `gh pr comment --attach` (gh 2.99+).
 - With `AGENTS.md`, `CLAUDE.md` is a regular file containing only `@AGENTS.md`.
-  Some plugin installers reject repositories with symlinks.
 - Use repo-relative links, and check every command, path, link, and badge you
   write. Leave out volatile metrics such as test or coverage counts.
 - Mask user PII, and call third-party apps "ecosystem apps".
