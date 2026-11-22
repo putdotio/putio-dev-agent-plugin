@@ -26,7 +26,7 @@ Each repo's workflows and release config own its targets, triggers, and gates.
 ## Release
 
 - npm packages release through the shared `frontend-release-npm` workflow
-  with OIDC, not a long-lived `NPM_TOKEN`.
+  with OIDC.
 - Secret-bearing jobs run on trusted refs, install fresh without caches, and
   pin actions to full SHAs with an exact version comment.
 - Release writes use a `putio-ci` App token in the `release` Environment;

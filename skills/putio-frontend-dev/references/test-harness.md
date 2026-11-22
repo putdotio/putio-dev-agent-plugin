@@ -13,7 +13,7 @@ Layers, platform notes, and examples live in Notion:
   it needs.
 - Write screenshots, logs, state dumps, or recordings to an ignored working
   directory.
-- Wait on observable state, not sleeps.
+- Wait on observable state.
 - Checked-in files carry no device IPs, passwords, certificates, signing
   material, tokens, account identifiers, personal paths, or private content IDs.
 
