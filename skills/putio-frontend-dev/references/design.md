@@ -12,8 +12,8 @@ fix the lower one.
 2. **The repository's root `DESIGN.md`**: the platform's design contract. It
    records decisions.
 3. **The platform's canvas**: a claude.ai Design canvas with boards and
-   reference captures. It is where options are explored. A choice on the
-   canvas becomes binding only when it lands in `DESIGN.md`.
+   reference captures. A choice on the canvas becomes binding when it lands
+   in `DESIGN.md`.
 
 ## Loop
 

@@ -56,9 +56,8 @@ Products.
 - Run the canonical verify as the baseline. Add dependents, installed-package,
   and consumer proof when relevant, and the full gate when the repo requires
   it, shared inputs changed, or coverage is uncertain.
-- Deterministic tests are partial evidence for production behavior. Claim
-  full verification only after exercising the unit, fixture, and live layers
-  that matter.
+- Claim full verification after exercising the unit, fixture, and live
+  layers that matter.
 - Live tests against shared accounts stay non-destructive and follow the
   repo's testing rules.
 
