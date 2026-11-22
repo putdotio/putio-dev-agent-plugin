@@ -10,7 +10,7 @@ fix the lower one.
    value it lacks is a putio-design change first; the platform takes it from
    the next release.
 2. **The repository's root `DESIGN.md`**: the platform's design contract. It
-   records decisions; it never invents token values.
+   records decisions.
 3. **The platform's canvas**: a claude.ai Design canvas with boards and
    reference captures. It is where options are explored. A choice on the
    canvas becomes binding only when it lands in `DESIGN.md`.
@@ -31,7 +31,7 @@ fix the lower one.
   YAML front-matter tokens, then `##` sections in the spec's order. Product
   rules beyond the spec go in extra sections after them.
 - Its tokens are generated from the locked `@putdotio/design` release and
-  checked in the repository's gate, never typed by hand.
+  checked in the repository's gate.
 - The repository's verify gate lints `DESIGN.md` against the format.
 
 ## Canvases
@@ -39,7 +39,7 @@ fix the lower one.
 The put.io Notion
 [Design canvases](https://app.notion.com/p/403d546ba2f581b89776c1760cf77bae)
 page indexes every canvas, its owner, and how the team works with it. Canvas
-links are private: they live in Notion, never in a repository.
+links are private: they live in Notion.
 
 - Canvas edits need a harness with the claude.ai Artifact tool. Without one,
   name the board and the change for the user to make.
@@ -49,4 +49,4 @@ links are private: they live in Notion, never in a repository.
   them between canvases server-side, then repoint the canvas's kit CSS to the
   new asset URLs.
 - Reference captures of ecosystem apps stay on the canvas's reference pages,
-  labeled with the app's name. They never enter a repository.
+  labeled with the app's name.

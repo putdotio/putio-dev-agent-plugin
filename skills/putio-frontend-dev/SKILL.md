@@ -57,8 +57,8 @@ checkout path, owning teams, and visibility.
   assertions.
 - **State**: model bug-sensitive flows as explicit states with exhaustive
   handling.
-- **Errors**: show expected errors as typed, localized messages, never raw
-  error text. Contain unexpected failures so unrelated UI keeps rendering.
+- **Errors**: show expected errors as typed, localized messages. Contain
+  unexpected failures so unrelated UI keeps rendering.
 - **Effects**: keep them in adapters and leaf components so render trees stay
   pure.
 - **Credentials**: only an official put.io website takes a username, password,
@@ -80,7 +80,7 @@ checkout path, owning teams, and visibility.
   uncertain. Report package, consumer, browser, and device proof separately.
 - Exercise user-visible changes in the real browser, app, simulator, emulator,
   or device: first load, loading, error, empty, small screens, focus, and races.
-  Look at the rendered result yourself; a finished run is not proof it looks right.
+  Look at the rendered result yourself.
 - Reuse passing proof while its source, inputs, and environment are unchanged.
 - Name each proof you could not run and what blocked it. Finding a command
   does not authorize live actions.
