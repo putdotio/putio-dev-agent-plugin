@@ -6,11 +6,12 @@ Three sources, highest first. When they disagree, the higher one wins and you
 fix the lower one.
 
 1. **[`@putdotio/design`](https://github.com/putdotio/putio-design)**: tokens,
-   fonts, and icons for every platform. Values come only from its release. A
-   value it lacks is a putio-design change first; the platform takes it from
-   the next release.
+   fonts, and icons that platforms share. A shared value it lacks is a
+   putio-design change first; the platform takes it from the next release.
 2. **The repository's root `DESIGN.md`**: the platform's design contract. It
-   records decisions.
+   records decisions and owns platform-only values, such as the app's type
+   scale. Before adding a value to putio-design, check how sibling apps own
+   it.
 3. **The platform's canvas**: a claude.ai Design canvas with boards and
    reference captures. A choice on the canvas becomes binding when it lands
    in `DESIGN.md`.
@@ -30,8 +31,9 @@ fix the lower one.
   [design.md format](https://github.com/google-labs-code/design.md/blob/main/docs/spec.md):
   YAML front-matter tokens, then `##` sections in the spec's order. Product
   rules beyond the spec go in extra sections after them.
-- Its tokens are generated from the locked `@putdotio/design` release and
-  checked in the repository's gate.
+- Shared tokens are generated from the locked `@putdotio/design` release and
+  checked in the repository's gate. Platform-only tokens live in its front
+  matter.
 - The repository's verify gate lints `DESIGN.md` against the format.
 
 ## Canvases
