@@ -14,6 +14,10 @@ Layers, platform notes, and examples live in Notion:
 - Write screenshots, logs, state dumps, or recordings to an ignored working
   directory.
 - Wait on observable state.
+- The shared test account sends no diagnostics. A Sentry proof switches
+  diagnostics on for the run and back off after.
+- A `files.copy` copy shares its MP4 conversion with the source. A test that
+  needs a file without an MP4 uploads a fresh one.
 - Checked-in files carry no device IPs, passwords, certificates, signing
   material, tokens, account identifiers, personal paths, or private content IDs.
 

@@ -25,6 +25,9 @@ Each repo's workflows and release config own its targets, triggers, and gates.
 
 ## Release
 
+- pnpm's `minimumReleaseAge` gate exempts trusted publishers by name under
+  `minimumReleaseAgeExclude`: `@putdotio/*` and official vendor packages such
+  as `@effect/tsgo`. Never pin a version there.
 - npm packages release through the shared `frontend-release-npm` workflow
   with OIDC.
 - Secret-bearing jobs run on trusted refs, install fresh without caches, and
