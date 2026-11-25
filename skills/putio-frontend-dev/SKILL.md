@@ -65,6 +65,11 @@ checkout path, owning teams, and visibility.
   or current one-time code, and the TOTP seed stays in the authorized secret
   provider. CLI, mobile, TV, extension, and harness clients sign in through
   OAuth or device-link and handle only codes and tokens.
+- **Media URLs**: authorize with the account download token, as a query
+  parameter or an `Authorization: Token` header. Never use the API access
+  token. The File URL token contract in the put.io Notion owns this.
+- **Analytics**: a new event or value goes into the analytics contract in the
+  put.io Notion in the same task. Public repos never link or quote it.
 - **Delivery**: merging or pushing to `main` is delivery, including the
   deploys it starts. Ask first for a manual deploy or publish, secret or
   provider changes, writes outside the forge, and force-pushes.
@@ -81,6 +86,11 @@ checkout path, owning teams, and visibility.
 - Exercise user-visible changes in the real browser, app, simulator, emulator,
   or device: first load, loading, error, empty, small screens, focus, and races.
   Look at the rendered result yourself.
+- Mocked runs and fixture screenshots are regression tests. They are never
+  proof and never PR visuals.
+- A review finding is a defect only when it breaks the spec the work
+  implements. Quote the contract line before changing code. Never move
+  knowledge the backend owns, such as playability, into a client.
 - Reuse passing proof while its source, inputs, and environment are unchanged.
 - Name each proof you could not run and what blocked it. Finding a command
   does not authorize live actions.

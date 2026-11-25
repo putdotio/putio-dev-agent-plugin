@@ -16,6 +16,15 @@ fix the lower one.
    reference captures. A choice on the canvas becomes binding when it lands
    in `DESIGN.md`.
 
+## Rules
+
+- On web, follow Tailwind's names and scales (`--space-N` is `p-N`); the root
+  font size stays 100%. TV and native platforms keep their own grids.
+- Stories and Playwright specs test behavior. Styles and copy come from
+  `@putdotio/design`, never from computed-style or copy assertions.
+- Porting a screen across platforms carries its actions, order, copy and
+  tokens. Draw it with the target platform's stock components.
+
 ## Loop
 
 1. **Capture** the shipped app through the repository's harness.
@@ -50,5 +59,8 @@ links are private: they live in Notion.
 - Each canvas loads fonts and Phosphor from its own uploaded assets. Copy
   them between canvases server-side, then repoint the canvas's kit CSS to the
   new asset URLs.
+- A new space for a platform is a page in its canvas, not a new canvas.
+- Boards carry one-line titles and labels. Rules, parity lists and rationale
+  go to Notion.
 - Reference captures of ecosystem apps stay on the canvas's reference pages,
   labeled with the app's name.
