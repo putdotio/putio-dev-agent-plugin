@@ -20,4 +20,4 @@ activation or boundary change.
 pnpm run verify
 ```
 
-CI runs the same gate. `pnpm exec oxfmt "**/*.md"` fixes Markdown formatting.
+CI runs `pnpm run verify` plus the shared link and scan checks. `pnpm exec oxfmt "**/*.md"` fixes Markdown formatting.
