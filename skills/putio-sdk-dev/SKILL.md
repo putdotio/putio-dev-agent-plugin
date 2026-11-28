@@ -60,6 +60,9 @@ Products.
   layers that matter.
 - Live tests against shared accounts stay non-destructive and follow the
   repo's testing rules.
+- Inject maintainer live-test credentials from the frontend vault via
+  `sops exec-env --same-process <payload> '<live-test-command>'` instead of
+  adding repo-local SOPS scripts.
 
 ## Delivery
 
