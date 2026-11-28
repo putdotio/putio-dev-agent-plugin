@@ -42,10 +42,11 @@ Each repo's workflows and release config own its targets, triggers, and gates.
 
 - Default `verify` runs without secrets; secret-dependent flows get their own
   target (`live-test`, `deploy`, `release`).
-- Local secrets come from a SOPS ciphertext input through a repo-owned
-  `secrets-setup` that validates and writes a gitignored `0600` `.env.local`,
-  plus `secrets-clean`. It fails closed, with no password-manager fallback or
-  interactive login, and stays out of install hooks. `.gitignore` keeps
+- Keep public repos free of SOPS setup scripts and internal vault wiring;
+  inject maintainer secrets from the frontend vault through
+  `sops exec-env --same-process <payload> '<command>'`. Only write a gitignored
+  `0600` `.env.local` when a tool or runtime cannot read process environment
+  variables, and remove it before removing a worktree. `.gitignore` keeps
   `!.env.example` tracked.
 - Exceptions keep their own setup: native Xcode builds, repos that
   hold signing material, and repos whose `.env.example` carries plain device or
