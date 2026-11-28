@@ -9,7 +9,9 @@ Workflow detail lives in the put.io Notion:
 - [Release workflow mechanics](https://app.notion.com/p/3fdd546ba2f58124966ce3993500204e):
   workflow YAML
 - [Repo secrets setup](https://app.notion.com/p/3fdd546ba2f5813d8a36fd219d145900):
-  repo secrets setup shape
+  per-repo environment and local secret layout
+- [Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228):
+  vault layout and test accounts
 
 Each repo's workflows and release config own its targets, triggers, and gates.
 
@@ -19,8 +21,8 @@ Each repo's workflows and release config own its targets, triggers, and gates.
    repo-local `verify` from thin workflow YAML; keep an existing multi-lane
    task graph's lanes.
 2. End `verify` with the shared `actions/links` and `actions/scan` steps from
-   [putdotio/.github](https://github.com/putdotio/.github), pinned to a tagged
-   commit; its README owns the calling contract.
+   [putdotio/.github](https://github.com/putdotio/.github), pinned to a full
+   commit SHA with a version comment; its README owns the calling contract.
 3. Get `verify` passing locally before touching publish or deploy automation.
 
 ## Release

@@ -27,15 +27,14 @@ Products.
   coroutine-first Kotlin.
 - **Scope**: TypeScript is the canonical full API client. Swift and Kotlin
   stay narrower and widen only for verified backend behavior that first-party
-  apps use, at the same quality bar.
+  apps use.
 - **Types**: parse at the boundary. The public surface exposes parsed types
   and typed errors, which are public API.
 - **Sources of truth**, in order: backend behavior and tests, current
   first-party app usage, maintained SDKs, archived clients, published docs.
   Read backend or consumer checkouts when available and authorized.
-- **Stability**: keep naming, parity, and type safety unless a documented
-  reason says otherwise. Repo-specific guidance goes in that repo's
-  `AGENTS.md`.
+- **Stability**: keep naming, parity, and type safety; document intentional
+  breaks and repo-specific guidance in that repo's `AGENTS.md`.
 
 ## Endpoint changes
 
@@ -56,14 +55,14 @@ Products.
 - Run the canonical verify as the baseline. Add dependents, installed-package,
   and consumer proof when relevant, and the full gate when the repo requires
   it, shared inputs changed, or coverage is uncertain.
-- Claim full verification after exercising the unit, fixture, and live
-  layers that matter.
+- Claim full verification only after running the unit, fixture, and live
+  layers the change affects.
 - Live tests against shared accounts stay non-destructive and follow the
   repo's testing rules.
 - Inject maintainer live-test credentials from the frontend vault
   ([Secrets management](https://app.notion.com/p/3ded546ba2f581e19b74c6d119adb228))
-  via `sops exec-env --same-process <payload> '<live-test-command>'` instead of
-  adding repo-local SOPS scripts.
+  with `sops exec-env --same-process <payload> '<live-test-command>'`. Keep
+  repo-local SOPS scripts and `.env.local` files out of SDK repos.
 
 ## Delivery
 

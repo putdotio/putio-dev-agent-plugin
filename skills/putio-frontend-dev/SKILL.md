@@ -53,7 +53,7 @@ checkout path, owning teams, and visibility.
 ## Rules
 
 - **Types**: parse external input at the boundary and derive types from the
-  validated contract. Fix type errors there, not with casts or non-null
+  validated contract. Fix type errors at the boundary; avoid casts and non-null
   assertions.
 - **State**: model bug-sensitive flows as explicit states with exhaustive
   handling.

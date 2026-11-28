@@ -11,9 +11,9 @@ mise use -g gh jq age sops github:putdotio/putio-cli
 ```
 
 - `gh`: signed in with the put.io GitHub account, which also uploads PR media
-- `age` and `sops`: decrypt the local secrets vault, see
+- `age` and `sops`: decrypt the local secrets vault; see
   [delivery](./delivery.md#secrets)
-- `putio`: the put.io CLI test harnesses use, see
+- `putio`: the put.io CLI test harnesses use; see
   [CLI harness](./cli-harness.md)
 
 ## Repositories

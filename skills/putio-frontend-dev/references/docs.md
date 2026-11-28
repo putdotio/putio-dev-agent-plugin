@@ -10,7 +10,7 @@ templates live in Notion:
   [org-wide policy](https://github.com/putdotio/.github/blob/main/SECURITY.md);
   a repo adds `SECURITY.md` only when its policy differs.
 - Code, tests, workflows, and release config are the doc. No
-  `docs/distribution.md`, behaviour specs, architecture overviews, testing
+  `docs/distribution.md`, behavior specs, architecture overviews, testing
   guides, or harness and lane catalogs; a rule a test pins is documented by
   that test. A step a human must take or a hazard no check catches (a store
   submission, a version pin, a setting outside the repo) gets a line in
@@ -24,6 +24,8 @@ templates live in Notion:
 - Use repo-relative links, and check every command, path, link, and badge you
   write. Leave out volatile metrics such as test or coverage counts.
 - Mask user PII, and call third-party apps "ecosystem apps".
+
+Verify required files:
 
 ```bash
 test -e README.md && test -e CONTRIBUTING.md && test -e LICENSE

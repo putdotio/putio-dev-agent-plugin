@@ -15,7 +15,7 @@ Contributor guidance for this public put.io skill catalog.
   sibling package. State prerequisites and boundaries as capabilities.
 - Keep public skills free of private repository content, credentials, account
   details, support cases, and machine-local paths. The frontend repository
-  registry may carry repository names, remotes, canonical paths, owners,
+  registry may carry repository names, repo slugs, canonical paths, owners,
   visibility, topics, and mode.
 - Keep current commands and volatile implementation details with the repository
   that owns them. Link public upstream sources when a stable pointer is useful.
@@ -24,5 +24,5 @@ Contributor guidance for this public put.io skill catalog.
   plus `criteria.json`. Update an eval only when its scenario or acceptance
   criteria changed.
 - Setup: `pnpm install --frozen-lockfile`. Proof for every change:
-  `pnpm run verify`, the same gate CI runs.
+  `pnpm run verify`.
 - Use repo-relative links in checked-in Markdown.

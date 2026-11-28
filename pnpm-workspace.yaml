@@ -6,9 +6,5 @@ allowBuilds:
   protobufjs: false
   sharp: false
 
-minimumReleaseAgeExclude:
-  - adm-zip@0.6.0
-  - "@uinaf/skillcheck@0.5.0"
-
 overrides:
   adm-zip@<0.6.0: 0.6.1

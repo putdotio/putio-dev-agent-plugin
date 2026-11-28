@@ -18,7 +18,8 @@ Check live provider settings before claiming a security posture.
   manual ref validated in a secretless job.
 - **Credentials**: load narrowly scoped publish or signing credentials from a
   protected GitHub Environment or OIDC, only at that step. Prefer registry
-  trusted publishing. npm SDKs call `putdotio/.github`'s
+  trusted publishing. npm SDKs call
+  [putdotio/.github](https://github.com/putdotio/.github)'s
   `frontend-release-npm` workflow, which owns Trusted Publishing.
 - **Triggers**: workflows that run repo code, install, build, test, package,
   sign, or publish never use `pull_request_target`.
@@ -31,8 +32,8 @@ Check live provider settings before claiming a security posture.
   built artifact, then load credentials and publish.
 - **Versions**: build versioned releases from the release tag, with manifest
   version, tag, package metadata, and public repo URL aligned.
-- **Handoff**: the registry package or GitHub Release asset is the durable
-  artifact, not an Actions artifact. Verify the published artifact matches
-  what you inspected, then promote it without rebuilding, and record the
-  commit SHA, tag, package version, artifact digest, workflow run, and
-  published artifact identity.
+- **Handoff**: treat the registry package or GitHub Release asset as the
+  durable artifact; never promote an Actions artifact. Verify the published
+  artifact matches what you inspected, then promote it without rebuilding.
+  Record the commit SHA, tag, package version, artifact digest, workflow run,
+  and published artifact identity.

@@ -20,8 +20,8 @@ fix the lower one.
 
 - On web, follow Tailwind's names and scales (`--space-N` is `p-N`); the root
   font size stays 100%. TV and native platforms keep their own grids.
-- Stories and Playwright specs test behavior. Styles and copy come from
-  `@putdotio/design`, never from computed-style or copy assertions.
+- Stories and Playwright specs test behavior, never computed styles or copy;
+  styles and copy come from `@putdotio/design`.
 - Porting a screen across platforms carries its actions, order, copy and
   tokens. Draw it with the target platform's stock components.
 
@@ -59,7 +59,7 @@ links are private: they live in Notion.
 - Each canvas loads fonts and Phosphor from its own uploaded assets. Copy
   them between canvases server-side, then repoint the canvas's kit CSS to the
   new asset URLs.
-- A new space for a platform is a page in its canvas, not a new canvas.
+- Add a new space for a platform as a page in its existing canvas.
 - Boards carry one-line titles and labels. Rules, parity lists and rationale
   go to Notion.
 - Reference captures of ecosystem apps stay on the canvas's reference pages,
